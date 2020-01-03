@@ -36,7 +36,7 @@ async def main():
     # Get a reference to the event loop as we plan to use low-level APIs.
 
     on_con_lost = loop.create_future()
-    message = ('\x15' '@MA' '@F0' '@Y0' '@h' '\x16')
+    message = ('@\x15' '@MA' '@F0' '@Y0' '@h' '@\x16')
 
     transport, protocol = await loop.create_connection(
         lambda: ClientProtocol(message, on_con_lost),
